@@ -2,11 +2,17 @@
   "name": "threejs_fd",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx parcel ./src/index.html && npx parcel watch ./src/index.html"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "three": "^0.144.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.7.0"
+  }
 }

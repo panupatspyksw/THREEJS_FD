@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THREE JS FUNDAMENTAL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .bg-dot {
+        background-color: #ffffff;
+        opacity: 1;
+        background-image: radial-gradient(#393939 0.5px, #ffffff 0.5px);
+        background-size: 10px 10px;
+      }
+    </style>
+  </head>
+  <body class="bg-dot relative">
+    <!-- outer container -->
+    <div class="p-5 md:p-10">
+      <!-- container -->
+      <div
+        class="max-w-2xl bg-white z-1 mx-auto flex flex-col items-center p-10 gap-5 block shadow-2xl rounded-3xl mx-auto"
+      >
+        <!-- header -->
+        <div class="text-4xl md:text-5xl mb-5 text-center leading-tight">
+          THREE JS LEARNING
+        </div>
+
+        <!-- project cards -->
+        <div class="flex gap-4 grid grid-cols-1 sm:grid-cols-3">
+          <a
+            href="./basic/index.html"
+            class="w-36 h-36 shadow-2xl p-3 text-center border border-slate-100 flex items-center justify-center bg-gray-800 text-white rounded-xl hover:text-gray-800 hover:scale-[0.90] hover:shadow-xl hover:bg-white duration-200"
+          >
+            Basic
+          </a>
+          <a
+            href="./transformobj/index.html"
+            class="w-36 h-36 shadow-2xl p-3 text-center border border-slate-100 flex items-center justify-center bg-gray-800 text-white rounded-xl hover:text-gray-800 hover:scale-[0.90] hover:shadow-xl hover:bg-white duration-200"
+          >
+            Transform objects
+          </a>
+          <a
+            href="./animation/index.html"
+            class="w-36 h-36 shadow-2xl p-3 text-center border border-slate-100 flex items-center justify-center bg-gray-800 text-white rounded-xl hover:text-gray-800 hover:scale-[0.90] hover:shadow-xl hover:bg-white duration-200"
+          >
+            Animations
+          </a>
+          <a
+            href="./camera/index.html"
+            class="w-36 h-36 shadow-2xl p-3 text-center border border-slate-100 flex items-center justify-center bg-gray-800 text-white rounded-xl hover:text-gray-800 hover:scale-[0.90] hover:shadow-xl hover:bg-white duration-200"
+          >
+            Cameras
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
