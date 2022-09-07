@@ -9,10 +9,14 @@ import {
 
 // DOM element
 const canvas = document.querySelector('#webgl')
+const canvascontainer = document.querySelector('#webglcontainer')
 
 // Size of scene
-const sizes = { width: canvas.clientWidth, height: canvas.clientHeight }
-const aspect = sizes.width / sizes.height
+let sizes = {
+  width: canvascontainer.clientWidth,
+  height: canvascontainer.clientHeight,
+}
+let aspect = sizes.width / sizes.height
 
 // Create scene
 const scene = new Scene()
@@ -37,3 +41,22 @@ scene.add(mesh)
 
 // Render Scene
 renderer.render(scene, camera)
+
+// Responsive handle scene
+window.addEventListener('resize', () => {
+  // Update Size of scene
+  sizes = {
+    width: canvascontainer.clientWidth,
+    height: canvascontainer.clientHeight,
+  }
+  aspect = sizes.width / sizes.height
+
+  // Update camera
+  camera.aspect = aspect
+  camera.updateProjectionMatrix()
+
+  // Update renderer
+  renderer.setSize(sizes.width, sizes.height)
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+  renderer.render(scene, camera)
+})
