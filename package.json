@@ -4,7 +4,9 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "start": "npx parcel ./src/index.html && npx parcel watch ./src/index.html"
+    "dev": "npx parcel ./src/index.html && npx parcel watch ./src/index.html",
+    "build": "parcel build ./src/index.html",
+    "start": "parcel ./src/index.html"
   },
   "keywords": [],
   "author": "",
