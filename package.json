@@ -4,8 +4,8 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "dev": "npx parcel ./src/index.html && npx parcel watch ./src/index.html",
-    "build": "parcel build ./src/index.html",
+    "dev": "parcel ./src/index.html && npx parcel watch ./src/index.html",
+    "build": "parcel build src/index.html",
     "start": "parcel ./src/index.html"
   },
   "keywords": [],
@@ -17,6 +17,10 @@
     "three": "^0.144.0"
   },
   "devDependencies": {
-    "parcel": "^2.7.0"
+    "parcel": "^2.7.0",
+    "parcel-reporter-static-files-copy": "^1.4.0"
+  },
+  "staticFiles": {
+    "staticPath": "./static"
   }
 }

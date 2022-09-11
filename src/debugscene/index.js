@@ -64,33 +64,6 @@ const material = new MeshBasicMaterial({
   color: parameters.color,
   wireframe: true /*  <= have to set wireframe to true cause buffergeometry not fill object yet can it will show nothing  */,
 })
-// Create Geometry by Float32Array
-// Type array , can only store floats, fixed length, easy for computer to handle
-// const count = 1000
-// const positionsArray = new Float32Array(count * 3 * 3)
-// for (let i = 0; i < count * 3 * 3; i++) {
-//   positionsArray[i] = (Math.random() - 0.5) * 4
-// }
-// // Create buffer geometry from positionsArray
-// const geometry = new BufferGeometry()
-// // Convert positionsArray to BufferAttribute for use in geometry
-// const positionsAttribute = new BufferAttribute(positionsArray, 3)
-// geometry.setAttribute('position', positionsAttribute)
-
-// // first vertice
-// positionsArray[0] = 0
-// positionsArray[1] = 0
-// positionsArray[2] = 0
-
-// // second vertice
-// positionsArray[3] = 0
-// positionsArray[4] = 1
-// positionsArray[5] = 0
-
-// // third vertice
-// positionsArray[6] = 1
-// positionsArray[7] = 0
-// positionsArray[8] = 0
 
 // Create some 3d Object (Red Box)
 const mesh = new Mesh(geometry, material)
