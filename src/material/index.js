@@ -38,7 +38,6 @@ import IMGmetalnessTexture from '../textures/door/metalness.jpg'
 import IMGmetalnessTexture from '../textures/door/metalness.jpg'
 import IMGmatcapTexture from '../textures/matcaps/3.png'
 import IMGgradientTexture from '../textures/gradients/5.jpg'
-
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 // Debug UI
@@ -78,12 +77,19 @@ const gradientTexture = textureLoader.load(IMGgradientTexture)
 // gradientTexture.minFilter = NearestFilter
 gradientTexture.magFilter = NearestFilter
 gradientTexture.generateMipmaps = false
-// const environmentMapTexture = cubeTextureLoader.load()
+const environmentMapTexture = cubeTextureLoader.load([
+  '/textures/environmentMaps/3/px.jpg',
+  '/textures/environmentMaps/3/nx.jpg',
+  '/textures/environmentMaps/3/py.jpg',
+  '/textures/environmentMaps/3/ny.jpg',
+  '/textures/environmentMaps/3/pz.jpg',
+  '/textures/environmentMaps/3/nz.jpg',
+])
 
 // Create Meshes
 const cubeGometry = new BoxGeometry(1, 1, 1)
 const torusGometry = new TorusGeometry(0.5, 0.1, 64, 64)
-const sphereGometry = new SphereGeometry(0.5, 16, 16)
+const sphereGometry = new SphereGeometry(0.5, 32, 16)
 const planeGometry = new PlaneGeometry(1, 1, 64, 128)
 // const material = new MeshNormalMaterial({
 //   // try to avoid double side
@@ -112,6 +118,7 @@ const planeGometry = new PlaneGeometry(1, 1, 64, 128)
 const material = new MeshStandardMaterial({
   metalness: 0.7,
   roughness: 0.2,
+  envMap: environmentMapTexture,
   // map: colorTexture,
   // aoMap: ambientOcclusionTexture,
   // aoMapIntensity: 1,
@@ -174,13 +181,13 @@ window.addEventListener('resize', () => {
 const animate = () => {
   // get and return how many seconds have passed since the Clock was created.
   const elapsedTime = clock.getElapsedTime()
-  // sphere.rotation.y = 0.1 * elapsedTime
-  // plane.rotation.y = 0.1 * elapsedTime
-  // torus.rotation.y = 0.1 * elapsedTime
+  sphere.rotation.y = 0.1 * elapsedTime
+  plane.rotation.y = 0.1 * elapsedTime
+  torus.rotation.y = 0.1 * elapsedTime
 
-  // sphere.rotation.x = 0.1 * elapsedTime
-  // plane.rotation.x = 0.1 * elapsedTime
-  // torus.rotation.x = 0.1 * elapsedTime
+  sphere.rotation.x = 0.1 * elapsedTime
+  plane.rotation.x = 0.1 * elapsedTime
+  torus.rotation.x = 0.1 * elapsedTime
   control.update()
 
   // Render Scene
